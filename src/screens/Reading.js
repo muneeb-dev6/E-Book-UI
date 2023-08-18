@@ -42,11 +42,13 @@ const DetailsScreen = () => {
         </TouchableOpacity>
         </View>
         <View style={styles.desc}>
-        <View style={{flex:1, flexDirection:"row", justifyContent:"space-between", alignItems:"baseline"}}>
+        <View style={{flex:1, flexDirection:"row", justifyContent:"space-between", alignItems:"baseline",padding:10}}>
         <Text style={styles.inst}>
             Details
         </Text>
+        <View style={{flex:1, borderRadius:30, backgroundColor:"white", maxWidth:40}}>
         <Icon  name="bookmark"  size={40} style={{color:'#009688'}}/>
+        </View>
         </View>
 
         <View style={{flex:2 ,backgroundColor:'white', borderRadius:30, flexDirection:"row",padding:15, justifyContent:'space-between'}}>
