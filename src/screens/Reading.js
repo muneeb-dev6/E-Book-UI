@@ -30,15 +30,25 @@ const DetailsScreen = () => {
                     <Icon name="star" size={20}></Icon>
                 </View>
                 <Text style={{fontSize:20, fontWeight:'bold', marginTop:10}}>$30.00</Text>
-                <TouchableOpacity style={styles.btnStyle}>
-                <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB',textAlign:'center'}}>Save</Text>
-                </TouchableOpacity>
         </View>
+        </View>
+        <View style={{flex:1, flexDirection:"row", justifyContent:"space-between", padding:10}}>
+        <TouchableOpacity style={styles.btnStyle}>
+        <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB',}}>Previous</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.btnStyle}>
+        <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB',}}>Next</Text>
+        </TouchableOpacity>
         </View>
         <View style={styles.desc}>
+        <View style={{flex:1, flexDirection:"row", justifyContent:"space-between", alignItems:"baseline"}}>
         <Text style={styles.inst}>
             Details
         </Text>
+        <Icon  name="bookmark"  size={40} style={{color:'#009688'}}/>
+        </View>
+
         <View style={{flex:2 ,backgroundColor:'white', borderRadius:30, flexDirection:"row",padding:15, justifyContent:'space-between'}}>
         <View style={{padding:10, alignItems:"flex-start", flex:0, justifyContent:"center", alignItems:"center"}}>
         <Text style={{color:'#009688', fontSize:15, fontWeight:"bold",}}>
