@@ -21,7 +21,7 @@ const ProfileScreen = ({navigation}) => {
         <ScrollView contentContainerStyle={{flexGrow: 1, width:'100%'}}>
         <View style={{flex:1, paddingHorizontal:20, marginTop:20}}>
         <View style={styles.border}>
-        <TextInput  placeholder='Search for books...'style={{flex:1}}></TextInput>
+        <TextInput  placeholder='Search for books...'style={{flex:1,}}></TextInput>
         <Icon name="search" size={30} style={{paddingVertical:10, color:'#009688'}}></Icon>
         </View>
         </View>
@@ -149,6 +149,7 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         marginTop: 10,
         borderColor: '#009688',
+        backgroundColor:'white',
         borderRadius: 20,
         flex:1,
         margintStart:20,

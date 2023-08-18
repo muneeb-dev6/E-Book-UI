@@ -19,8 +19,13 @@ export default class ImageSlider extends Component {
       ToastAndroid.show(`Image Id: ${item.id}`, ToastAndroid.SHORT)
     };
     renderImageItem = ({ item }) => {
-        return (<Image source={item.source} style={styles.bookCovers}
+        return (
+          <View style={{flex:1}}>
+          <Image source={item.source} style={styles.bookCovers}
           onPress={() => this.handleImagePress(item)}/>
+          <Text style={{fontSize:10, fontWeight:'bold'}}>{item.bookName}</Text>
+          <Text style={{fontSize:10, color:'#009688',}}>{item.authorName}</Text>
+          </View>
           );
     };
 render(){

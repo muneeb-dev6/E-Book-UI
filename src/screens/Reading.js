@@ -7,9 +7,6 @@ import { useEffect, useRef } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 const DetailsScreen = () => {
     const [Qty, setQty] = useState(1)
-    useEffect(()=>{
-        ToastAndroid.show(`Quantity has been updated to ${Qty}.`, ToastAndroid.SHORT)
-    },[Qty])
     return(
         <View style={{flex: 1}}>
         <ImageBackground source={require('../images/bac.jpg')} resizeMode="cover" style={{flex:1,}}></ImageBackground>
