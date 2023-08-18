@@ -30,40 +30,25 @@ const ProfileScreen = ({navigation}) => {
         <TouchableOpacity id="edu" style ={styles.TouchableOpacityStyling}>
         <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB'}}>Education</Text>
         </TouchableOpacity>
-        <TouchableOpacity id="mag" style ={styles.TouchableOpacityStyling} onPress={
-            () => {
-            }
-        }>
+        <TouchableOpacity id="mag" style ={styles.TouchableOpacityStyling}>
         <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB'}}>Magazines</Text>
         </TouchableOpacity>
-        <TouchableOpacity id="nov" style ={styles.TouchableOpacityStyling} onPress={
-            () => ToastAndroid.show('You selected Novels category.', ToastAndroid.SHORT)
-        }>
+        <TouchableOpacity id="nov" style ={styles.TouchableOpacityStyling}>
         <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB'}}>Novels</Text>
         </TouchableOpacity>
-        <TouchableOpacity id="his" style ={styles.TouchableOpacityStyling} onPress={
-            () => ToastAndroid.show('You selected History category.', ToastAndroid.SHORT)
-        }>
+        <TouchableOpacity id="his" style ={styles.TouchableOpacityStyling}>
         <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB'}}>History</Text>
         </TouchableOpacity>
-        <TouchableOpacity id="rel" style ={styles.TouchableOpacityStyling} onPress={
-            () => ToastAndroid.show('You selected Religion category.', ToastAndroid.SHORT)
-        }>
+        <TouchableOpacity id="rel" style ={styles.TouchableOpacityStyling} >
         <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB'}}>Religion</Text>
         </TouchableOpacity>
-        <TouchableOpacity id="rec" style ={styles.TouchableOpacityStyling} onPress={
-            () => ToastAndroid.show('You selected Recipies category.', ToastAndroid.SHORT)
-        }>
+        <TouchableOpacity id="rec" style ={styles.TouchableOpacityStyling} >
         <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB'}}>Recipies</Text>
         </TouchableOpacity>
-         <TouchableOpacity id="rec" style ={styles.TouchableOpacityStyling} onPress={
-            () => ToastAndroid.show('You selected Fantasy category.', ToastAndroid.SHORT)
-        }>
+         <TouchableOpacity id="rec" style ={styles.TouchableOpacityStyling} >
         <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB'}}>Fantasy</Text>
         </TouchableOpacity>
-        <TouchableOpacity id="rec" style ={styles.TouchableOpacityStyling} onPress={
-            () => ToastAndroid.show('You selected Sci-Fi category.', ToastAndroid.SHORT)
-        }>
+        <TouchableOpacity id="rec" style ={styles.TouchableOpacityStyling} >
         <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB'}}>Sci-Fi</Text>
         </TouchableOpacity>
         </ScrollView>
