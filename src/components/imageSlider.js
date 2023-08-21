@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Image, FlatList, ToastAndroid } from "react-native";
+import { StyleSheet, Text, View, Image, FlatList, ToastAndroid, TouchableOpacity } from "react-native";
+
 export default class ImageSlider extends Component {
-    constructor(props, {navigataion}) {
+    constructor(props, {navigation}) {
       super(props);
       this.state = {
         images: [
@@ -16,13 +17,14 @@ export default class ImageSlider extends Component {
       };
     }
     handleImagePress = (item) => {
-      ToastAndroid.show(`Image Id: ${item.id}`, ToastAndroid.SHORT)
+      ToastAndroid.show(`Item: ${item.id} clicked.`, ToastAndroid.SHORT)
     };
     renderImageItem = ({ item }) => {
-        return (
+        return(
           <View style={{flex:1}}>
-          <Image source={item.source} style={styles.bookCovers}
-          onPress={() => this.handleImagePress(item)}/>
+          <TouchableOpacity >
+          <Image source={item.source} style={styles.bookCovers}/>
+          </TouchableOpacity>
           <Text style={{fontSize:10, fontWeight:'bold'}}>{item.bookName}</Text>
           <Text style={{fontSize:10, color:'#009688',}}>{item.authorName}</Text>
           </View>

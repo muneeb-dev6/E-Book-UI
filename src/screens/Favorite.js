@@ -15,7 +15,10 @@ const FavoriteScreen = () => {
         <ScrollView style={{flex:1, flexDirection:"column"}}>
             <View style={{flex:1, flexDirection:'row',padding:20, alignItems:"center", justifyContent:'center'}}>
                 <View>
+                <TouchableOpacity>
                 <Image source={require('../images/Fantasy/book1.jpg')} style={{borderRadius:15,height:220, width: 150}}/>
+                </TouchableOpacity>
+                
                 <Text style={{fontSize:15, fontWeight:'bold'}}>Harry Potter</Text>
                 <Text style={{fontSize:15, color:'#009688',}}>By J.K. Rowling</Text>
                 <View style={{flex:1, flexDirection:'row', justifyContent:"space-between"}}>
@@ -25,7 +28,9 @@ const FavoriteScreen = () => {
                 </View>
 
                 <View>
+                <TouchableOpacity>
                 <Image source={require('../images/SciFi/book1.jpeg')} style={{borderRadius:15, marginLeft: 10, height:220, width: 150}}/>
+                </TouchableOpacity>
                 <Text style={{fontSize:15, fontWeight:'bold',marginLeft: 10}}>Lunar Storm</Text>
                 <Text style={{fontSize:15, color:'#009688',marginLeft: 10}}>Terry Crosby</Text>
                 <View style={{flex:1, flexDirection:'row', justifyContent:"space-between"}}>
@@ -36,7 +41,9 @@ const FavoriteScreen = () => {
             </View>
             <View style={{flex:1, flexDirection:'row',padding:20, alignItems:"center", justifyContent:'center'}}>
                 <View>
+                <TouchableOpacity>
                 <Image source={require('../images/EducationBooks/book5.jpg')} style={{borderRadius:15,height:220, width: 150}}/>
+                </TouchableOpacity>
                 <Text style={{fontSize:15, fontWeight:'bold'}}>Programming Rust</Text>
                 <Text style={{fontSize:15, color:'#009688',}}>Jim blandy & Jason</Text>
                 <View style={{flex:1, flexDirection:'row', justifyContent:"space-between"}}>
@@ -44,9 +51,10 @@ const FavoriteScreen = () => {
                 <Icon name="bookmark" size={30} style={{color:'#009688'}}></Icon>
                 </View>
                 </View>
-                
                 <View>
+                <TouchableOpacity>
                 <Image source={require('../images/HistoryBooks/book2.jpg')} style={{borderRadius:15, marginLeft: 10, height:220, width: 150}}/>
+                </TouchableOpacity>
                 <Text style={{fontSize:15, fontWeight:'bold', marginLeft: 10}}>The Formative Phase</Text>
                 <Text style={{fontSize:15, color:'#009688', marginLeft: 10}}>Khalid Bin Saeed</Text>
                 <View style={{flex:1, flexDirection:'row', justifyContent:"space-between"}}>
@@ -58,7 +66,9 @@ const FavoriteScreen = () => {
 
             <View style={{flex:1, flexDirection:'row',padding:20, alignItems:"center", justifyContent:'center'}}>
                 <View>
+                <TouchableOpacity>
                 <Image source={require('../images/EducationBooks/book2.jpg')} style={{borderRadius:15,height:220, width: 150}}/>
+                </TouchableOpacity>
                 <Text style={{fontSize:15, fontWeight:'bold'}}>Python Programming</Text>
                 <Text style={{fontSize:15, color:'#009688',}}>Mark Reed</Text>
                 <View style={{flex:1, flexDirection:'row', justifyContent:"space-between"}}>
@@ -67,7 +77,9 @@ const FavoriteScreen = () => {
                 </View>
                 </View>
                 <View>
+                <TouchableOpacity>
                 <Image source={require('../images/SciFi/book2.jpg')} style={{borderRadius:15,marginLeft: 10, height:220, width: 150}}/>
+                </TouchableOpacity>
                 <Text style={{fontSize:15, fontWeight:'bold', marginLeft: 10}}>The Hunger Games</Text>
                 <Text style={{fontSize:15, color:'#009688', marginLeft: 10}}>Suzanne Collins</Text>
                 <View style={{flex:1, flexDirection:'row', justifyContent:"space-between"}}>

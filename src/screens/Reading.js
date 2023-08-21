@@ -1,4 +1,4 @@
-import React, { useState,use } from 'react'
+import React, { useState } from 'react'
 import {View, Text, StyleSheet, ImageBackground, Image, TouchableOpacity, ToastAndroid, ScrollView} from 'react-native';
 import ProfileScreen from './Profile';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -20,7 +20,7 @@ const DetailsScreen = () => {
         </View>
         <View style = {styles.bookCover}>
             <Image id="cover" source={require('../images/EducationBooks/book1.jpg')} style={{borderRadius:15,height: 200, width: 150}}/>
-            <View style={{flex:1, paddingHorizontal:20}}>
+            <View style={{flex:1, paddingHorizontal:20,}}>
                 <Text style={{fontSize:20, fontWeight:'bold'}}>Computer Science</Text>
                 <Text style={{fontSize:10, color:'#009688', marginTop:10}}>By Dave Duddel</Text>
                 <View style={{flex:0, flexDirection:'row', marginTop:10}}>
@@ -31,27 +31,21 @@ const DetailsScreen = () => {
                     <Icon name="star" size={20}></Icon>
                 </View>
                 <Text style={{fontSize:20, fontWeight:'bold', marginTop:10}}>$30.00</Text>
-        </View>
-        </View>
-        <View style={{flex:1, flexDirection:"row", justifyContent:"space-between", padding:10}}>
-        <TouchableOpacity style={styles.btnStyle}>
-        <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB',}}>Previous</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.btnStyle}>
-        <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB',}}>Next</Text>
+                <TouchableOpacity style={styles.btnStyle}>
+            <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB',}}>Buy</Text>
         </TouchableOpacity>
         </View>
+        </View>
+       
         <View style={styles.desc}>
-        <View style={{flex:1, flexDirection:"row", justifyContent:"space-between", alignItems:"baseline",padding:10}}>
+        <View style={{flex:1, flexDirection:"row", justifyContent:"space-between", alignItems:"center",}}>
         <Text style={styles.inst}>
             Details
         </Text>
-        <View style={{flex:1, borderRadius:30, backgroundColor:"white", maxWidth:40}}>
+        <TouchableOpacity style={{justifyContent:"center" ,alignItems:"center"}}>
         <Icon  name="bookmark"  size={40} style={{color:'#009688'}}/>
+        </TouchableOpacity>
         </View>
-        </View>
-
         <View style={{flex:2 ,backgroundColor:'white', borderRadius:30, flexDirection:"row",padding:15, justifyContent:'space-between'}}>
         <View style={{padding:10, alignItems:"flex-start", flex:0, justifyContent:"center", alignItems:"center"}}>
         <Text style={{color:'#009688', fontSize:15, fontWeight:"bold",}}>
@@ -69,7 +63,6 @@ const DetailsScreen = () => {
         </Text>
         <Text style={{color:'#009688'}}>768</Text>
         </View>
-
         <View style={{justifyContent:"center", alignItems:"center", padding:15}}>
         <Text style={{color:'#009688', fontSize:15, fontWeight:"bold",}}>
             Language
@@ -77,7 +70,6 @@ const DetailsScreen = () => {
         <Text style={{color:'#009688'}}>English</Text>
         </View>
         </View>
-
         <View style={{flex:2,justifyContent:'center', alignItems:'center'}}>
         <Text style={{color:'#009688'}}>This book covers the crucial aspects of programming, starting from the basics till the design and optimization of algorithms. The book also clears the theoretical concepts.</Text>
         </View>
@@ -87,26 +79,37 @@ const DetailsScreen = () => {
         <View style={styles.quantity}>
         <TouchableOpacity style={{minWidth:40, alignItems:"center"}}
          onPress={()=>{
-            if(Qty>1){
-                setQty(prevQty => prevQty-1)
+            if(Qty > 1){
+                setQty(prevQty => prevQty - 1)
             }
             else{
-                ToastAndroid.show('Quantity cannot be zero', ToastAndroid.SHORT)
+                ToastAndroid.show('Quantity cannot be zero.', ToastAndroid.SHORT)
             }
         }}>
         <Text style={{color:"#CEEDDB", fontSize:25, fontWeight:"bold"}}>-</Text>
         </TouchableOpacity>
         <Text style = {{fontSize:25, fontWeight:'bold',color:'#CEEDDB',textAlign:'center',}}>{Qty}</Text>
         <TouchableOpacity style={{minWidth:40, alignItems:"center"}} onPress={()=>{
-            setQty(prevQty => prevQty+1)
+            if(Qty < 50){
+                setQty(prevQty => prevQty + 1)
+            }
+            else{
+                ToastAndroid.show('Quantity limited exceeded.', ToastAndroid.SHORT)
+            }
         }}>
         <Text style={{color:"#CEEDDB", fontSize:28, fontWeight:"bold", alignItems:"center",}}>+</Text>
         </TouchableOpacity>
         </View>
         <TouchableOpacity style={styles.btnStyle} onPress={()=>{
-            setCartItems(items => items + Qty)
+            if(CartItems < 50){
+                setCartItems(items => items + Qty)
+                setQty(1)
+            }
+            else{
+                ToastAndroid.show('Cart limited exceeded.', ToastAndroid.SHORT)
+            }
         }}>
-            <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB',}}>Add to cart ({CartItems})</Text>
+        <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB',}}>Add to cart: {CartItems}</Text>
         </TouchableOpacity>
         </View>
         </View>

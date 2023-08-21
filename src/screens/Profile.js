@@ -3,8 +3,8 @@ import {View,Button ,Text ,TextInput, StyleSheet, Image ,ImageBackground, Scroll
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import { Picker } from '@react-native-picker/picker';
 import { useState } from 'react';
+import { Picker } from '@react-native-picker/picker';
 import ImageSlider from '../components/imageSlider';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import TabBar from '../navigations/bottomTab';
@@ -76,7 +76,6 @@ const ProfileScreen = ({navigation}) => {
             </View>
         </View>
         </View>
-
         </ScrollView>
         </View>
         <NavigationContainer independent={true}></NavigationContainer>
