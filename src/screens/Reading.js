@@ -7,6 +7,7 @@ import { useEffect, useRef } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 const DetailsScreen = () => {
     const [Qty, setQty] = useState(1)
+    const [CartItems, setCartItems] = useState(0)
     return(
         <View style={{flex: 1}}>
         <ImageBackground source={require('../images/bac.jpg')} resizeMode="cover" style={{flex:1,}}></ImageBackground>
@@ -92,7 +93,6 @@ const DetailsScreen = () => {
             else{
                 ToastAndroid.show('Quantity cannot be zero', ToastAndroid.SHORT)
             }
-            
         }}>
         <Text style={{color:"#CEEDDB", fontSize:25, fontWeight:"bold"}}>-</Text>
         </TouchableOpacity>
@@ -103,8 +103,10 @@ const DetailsScreen = () => {
         <Text style={{color:"#CEEDDB", fontSize:28, fontWeight:"bold", alignItems:"center",}}>+</Text>
         </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.btnStyle}>
-            <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB',}}>Add to cart</Text>
+        <TouchableOpacity style={styles.btnStyle} onPress={()=>{
+            setCartItems(items => items + Qty)
+        }}>
+            <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB',}}>Add to cart ({CartItems})</Text>
         </TouchableOpacity>
         </View>
         </View>
