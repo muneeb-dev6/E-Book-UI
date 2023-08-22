@@ -6,6 +6,7 @@ import SignupScreen from "../screens/Signup";
 import TabBar from "../navigations/bottomTab";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import BillScreen from "../screens/billing"
 import DetailsScreen from "../screens/details";
 const Stack = createNativeStackNavigator()
 const StackNavigatorScreens = () => {
@@ -15,20 +16,26 @@ const StackNavigatorScreens = () => {
       options={styles.headerStyling}
       name="Login"
       component={LoginScreen}>
-      </Stack.Screen> */}
-      
+      </Stack.Screen>
+       */}
+
       <Stack.Screen
         name="E-Book Store"
         options={{headerShown:false}}
         component={TabBar}>
       </Stack.Screen>
 
+      <Stack.Screen
+        name="Bill"
+        options={{headerShown:false}}
+        component={BillScreen}>
+      </Stack.Screen>
       {/* <Stack.Screen
       options={styles.headerStyling}
       name="Profile"
       component={ProfileScreen}>
-      </Stack.Screen> */}
-{/* 
+      </Stack.Screen>
+
       <Stack.Screen
       options={styles.headerStyling}
       name="Signup"
@@ -39,7 +46,8 @@ const StackNavigatorScreens = () => {
       options={styles.headerStyling}
       name="Details"
       component={DetailsScreen}>
-      </Stack.Screen> */}
+      </Stack.Screen>
+       */}
       </Stack.Navigator>
     );
   }

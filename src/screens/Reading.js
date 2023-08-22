@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import TabBar from '../navigations/bottomTab';
 import { useEffect, useRef } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-const DetailsScreen = () => {
+const DetailsScreen = ({navigation}) => {
     const [Qty, setQty] = useState(1)
     const [CartItems, setCartItems] = useState(0)
     return(
@@ -31,7 +31,7 @@ const DetailsScreen = () => {
                     <Icon name="star" size={20}></Icon>
                 </View>
                 <Text style={{fontSize:20, fontWeight:'bold', marginTop:10}}>$30.00</Text>
-                <TouchableOpacity style={styles.btnStyle}>
+                <TouchableOpacity style={styles.btnStyle} onPress={()=>navigation.navigate("Bill")}>
             <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB',}}>Buy</Text>
         </TouchableOpacity>
         </View>
@@ -75,7 +75,7 @@ const DetailsScreen = () => {
         </View>
         <View style={{flex:1, flexDirection:'row', justifyContent:'space-between', alignItems:"baseline",}}>
         {/* quantity button */}
-        <Text style={{color:'#009688', fontWeight:'bold', fontSize:25}}>QTY</Text>
+       
         <View style={styles.quantity}>
         <TouchableOpacity style={{minWidth:40, alignItems:"center"}}
          onPress={()=>{
@@ -88,7 +88,7 @@ const DetailsScreen = () => {
         }}>
         <Text style={{color:"#CEEDDB", fontSize:25, fontWeight:"bold"}}>-</Text>
         </TouchableOpacity>
-        <Text style = {{fontSize:25, fontWeight:'bold',color:'#CEEDDB',textAlign:'center',}}>{Qty}</Text>
+        <Text style = {{fontSize:25, fontWeight:'bold',color:'#CEEDDB',textAlign:'center'}}>{Qty}</Text>
         <TouchableOpacity style={{minWidth:40, alignItems:"center"}} onPress={()=>{
             if(Qty < 50){
                 setQty(prevQty => prevQty + 1)
@@ -109,8 +109,11 @@ const DetailsScreen = () => {
                 ToastAndroid.show('Cart limited exceeded.', ToastAndroid.SHORT)
             }
         }}>
-        <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB',}}>Add to cart: {CartItems}</Text>
+        <Text style = {{fontSize:18, fontWeight:'bold',color:'#CEEDDB',}}>Add to cart</Text>
         </TouchableOpacity>
+        </View>
+        <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
+        <Text style={{color:'#009688', fontWeight:'bold', fontSize:25}}>Quantity: {CartItems}</Text>
         </View>
         </View>
         </ScrollView>
